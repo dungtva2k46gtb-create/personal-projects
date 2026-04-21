@@ -86,20 +86,28 @@ This project is organized around a few core principles:
 
 ```text
 airflow-pipeline/
-├── config/                # Shared configuration for the platform
+├── config/                # Shared configuration for the core pipeline
 ├── dags/                  # Airflow DAG definitions
 ├── dbt/                   # dbt project for bronze / silver / gold transformations
 ├── plugins/               # Airflow plugins and custom extensions
 ├── scripts/               # Utility and helper scripts
-├── n8n/                   # n8n service and automation workflows
-├── nifi/                  # NiFi service for crawling and ingestion
-├── superset/              # Superset service for dashboards and BI
+├── docs/                  # Project documents and architecture assets
+├── .gitignore             # Git ignore rules
+├── docker-compose.yaml    # Core pipeline service composition
 ├── Dockerfile             # Main container build definition
-├── docker-compose.yaml    # Core platform service composition
-├── requirements.txt       # Python dependencies
 ├── QUICKSTART.md          # Quickstart guide
+├── README.md              # Project overview (this file)
+├── requirements.txt       # Python dependencies
 ├── STRUCTURE.md           # Additional repository structure notes
-└── README.md              # Project overview (this file)
+n8n/                   # Standalone n8n service and automation workflows
+│   ├── docker-compose.yml
+│   ├── Dockerfile
+│   └── README.md
+nifi/                  # Standalone NiFi service for crawling and ingestion
+│   ├── docker-compose.yml
+│   └── README.md
+superset/              # Standalone Superset service for dashboards and BI
+    └── README.md
 ```
 
 ---
